@@ -71,5 +71,7 @@ fn check_recovery() {
     let sig2rec = recoverable::Signature::new(&sig2, id2).unwrap();
     let rec_pub_key = sig2rec.recover_verify_key_from_digest(digest).unwrap();
 
-    println!("pubkey2 recovered {:?}", hex::encode(&rec_pub_key.to_encoded_point(false).as_bytes()))
+    println!("pubkey2 recovered {:?}", hex::encode(&rec_pub_key.to_encoded_point(false).as_bytes()));
+
+    assert_eq!(&recovered_pub_key.serialize()[..], rec_pub_key.to_encoded_point(false).as_bytes());
 }
