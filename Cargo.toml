@@ -1,0 +1,13 @@
+[package]
+name = "rust-secp256k1-bug"
+version = "0.1.0"
+authors = ["Jan <jan@parseclabs.org>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+libsecp256k1 = "0.3.5"
+k256 = { version="0.7.2", default-features = false, features = ["ecdsa", "keccak256"] }
+hex = "0.4.2"
+sha3 = { version="0.9", default-features = false }
